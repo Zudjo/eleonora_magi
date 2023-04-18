@@ -1,0 +1,33 @@
+@use '../variables/colors'
+@use '../variables/dimensions'
+
+#header
+    display: flex
+    flex-direction: row
+    align-items: center
+    justify-content: space-between
+    width: 100%
+    padding: 0 2rem
+    height: dimensions.$header_height
+    border-bottom-style: solid
+    border-bottom-color: colors.$purple
+    border-bottom-width: .2rem
+        
+    & > img
+        width: 8rem
+
+    & > ul
+        list-style-type: none
+
+        & > li
+            float: left
+
+            &:first-child > a
+                margin-right: .5rem
+            
+            &:last-child > a
+                margin-left: .5rem
+
+            &:not(:first-child):not(:last-child) > a
+                margin: 0 .5rem
+
