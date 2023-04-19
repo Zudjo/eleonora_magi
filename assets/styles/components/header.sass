@@ -13,14 +13,25 @@
     border-bottom-color: colors.$purple
     border-bottom-width: .2rem
         
-    & > img
+    & > a > #logo
         width: 8rem
+
+    & > a > #hamburger-icon
+        display: none
+        height: calc(dimensions.$header_height * .33)
+
+        @media (max-width: 433px)
+            display: block
+            
 
     & > ul
         list-style-type: none
 
         & > li
             float: left
+
+            @media (max-width: 433px)
+                display: none
 
             &:first-child > a
                 margin-right: .5rem

@@ -8,9 +8,18 @@
         justify-content: center
         padding: 2rem
 
+        @media (max-width: 433px)
+            flex-direction: column
+
         & > div
             width: 50%
             margin-right: 1rem
+
+            @media (max-width: 433px)
+                width: auto
+                margin-right: 0
+                margin-bottom: 1rem
+
 
             & > h1
                 font-size: 4rem
@@ -20,9 +29,16 @@
 
             & > p
                 margin-top: 1rem
-                font-size: 1.25rem
+                font-size: 1.33rem
                 font-weight: 300
         
         & > img
             width: 50%
             margin-left: 1rem
+            border-radius: 1rem
+
+            @media (max-width: 433px)
+                width: 100%
+                margin-left: 0
+                margin-top: 1rem
+
