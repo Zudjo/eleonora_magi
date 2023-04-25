@@ -1,5 +1,6 @@
 @use '../variables/colors'
 @use '../variables/dimensions'
+@use '../variables/breakpoints'
 
 #header
     display: flex
@@ -7,38 +8,53 @@
     align-items: center
     justify-content: space-between
     width: 100%
-    padding: 0 2rem
+    padding: 1rem 2rem
     height: dimensions.$header_height
     border-bottom-style: solid
     border-bottom-color: colors.$purple
     border-bottom-width: .2rem
-        
-    & > a > #logo
-        width: 8rem
+    position: absolute
 
-    & > a > #hamburger-icon
-        display: none
-        height: calc(dimensions.$header_height * .33)
+    @media (max-width: breakpoints.$mobile)
+        flex-direction: column
+        align-items: flex-end
+        height: auto
+        background-color: rgba(colors.$black, 0.5)
 
-        @media (max-width: 433px)
-            display: block
+    & div
+        display: flex
+        flex-direction: row
+        justify-content: space-between
+
+        @media (max-width: breakpoints.$mobile)
+            width: 100%
+
+        & > a > #logo
+            width: 8rem
+
+        & > button
+            background-color: transparent
+            border: transparent
+            
+            & > #hamburger-icon
+            display: none
+            height: calc(dimensions.$header_height * .33)
+
+            @media (max-width: breakpoints.$mobile)
+                display: block
             
 
     & > ul
         list-style-type: none
+        display: flex
+        flex-direction: row
+        gap: 2rem
 
-        & > li
-            float: left
-
-            @media (max-width: 433px)
-                display: none
-
-            &:first-child > a
-                margin-right: .5rem
-            
-            &:last-child > a
-                margin-left: .5rem
-
-            &:not(:first-child):not(:last-child) > a
-                margin: 0 .5rem
-
+        @media (min-width: breakpoints.$mobile)
+            order: 3
+                
+        @media (max-width: breakpoints.$mobile)
+            display: none
+            margin-top: 2rem
+            flex-direction: column
+            text-align: right

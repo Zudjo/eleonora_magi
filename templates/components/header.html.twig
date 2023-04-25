@@ -1,8 +1,13 @@
 <div id="header">
-    <a href="">
-        <img id="logo" src="{{ asset('images/logo_bianco.webp') }}">
-    </a>
-    <ul>
+    <div>
+        <a href="">
+            <img id="logo" src="{{ asset('images/logo_bianco.webp') }}">
+        </a>
+        <button {{ stimulus_controller('header') }} {{ stimulus_action('header', 'toggle_menu') }}>
+            <img id="hamburger-icon" src="{{ asset('images/hamburger-menu-icon.webp') }}">
+        </button>
+    </div>
+    <ul id="menu">
         <li>
             <a href="">Ricette fit</a>
         </li>
@@ -13,7 +18,4 @@
             <a href="">Norme sulla privacy</a>
         </li>
     </ul>
-    <a href="">
-        <img id="hamburger-icon" src="{{ asset('images/hamburger-menu-icon.webp') }}">
-    </a>
-</div>
+</div>  
