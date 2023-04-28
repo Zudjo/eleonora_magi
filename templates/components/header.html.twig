@@ -1,10 +1,10 @@
 <div id="header">
     <div>
         <a href="">
-            <img id="logo" src="{{ asset('images/logo_bianco.webp') }}">
+            <img id="logo" src="{{ asset('images/logo.webp') }}">
         </a>
-        <button {{ stimulus_controller('header') }} {{ stimulus_action('header', 'toggle_menu') }}>
-            <img id="menu-icon" src="{{ asset('images/menu-icon-closed.webp') }}">
+        <button {{ stimulus_controller('header') }} {{ stimulus_action('header', 'toggleMenu') }}>
+            <img id="menu-icon" src="{{ asset('images/menu-icon-close.webp') }}">
         </button>
     </div>
     <ul id="menu">

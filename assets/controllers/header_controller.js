@@ -1,29 +1,29 @@
 import { Controller } from '@hotwired/stimulus';
 
-import menu_icon_opened_path from '../../public/images/menu-icon-opened.webp';
-import menu_icon_closed_path from '../../public/images/menu-icon-closed.webp';
+import menuIconOpen from '../../public/images/menu-icon-open.webp';
+import menuIconClose from '../../public/images/menu-icon-close.webp';
 
 
 export default class extends Controller {
     
-    toggle_menu() {
+    toggleMenu() {
         let menu = document.getElementById('menu');
-        let header = document.getElementById('header');
-        let menu_icon = document.getElementById('menu-icon');
-        let display_value = window.getComputedStyle(menu).getPropertyValue('display');
-        let position_value = window.getComputedStyle(header).getPropertyValue('position');
+        let menuIcon = document.getElementById('menu-icon');
 
-        if (display_value == 'none') {
-            display_value = 'flex';
-            position_value = 'absolute';
-            menu_icon.src = menu_icon_opened_path;
+        let menuIconSource;
+        let menuDisplayValue = window.getComputedStyle(menu).getPropertyValue('display');
+
+        if (menuDisplayValue == 'none') {
+            menuDisplayValue = 'flex';
+            menuIconSource = menuIconOpen;
+
         } else {
-            display_value = 'none';
-            position_value = 'relative';
-            menu_icon.src = menu_icon_closed_path;
+            menuDisplayValue = 'none';
+            menuIconSource = menuIconClose;
         }
 
-        menu.style.display = display_value;
-        // header.style.position = position_value;
+        menu.style.display = menuDisplayValue;
+        menuIcon.src = menuIconSource;
     }
 }
+
