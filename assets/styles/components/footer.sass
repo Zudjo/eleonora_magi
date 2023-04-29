@@ -1,4 +1,30 @@
+@use '../variables/dimensions'
+@use '../variables/colors'
+
 #footer
     display: flex
     flex-direction: row
+    align-items: center
+    justify-content: center
     width: 100%
+    height: dimensions.$header_height
+    padding: 1rem 2rem
+    border-top-style: solid
+    border-top-color: rgba(colors.$purple, .5)
+    border-top-width: .1rem
+    position: relative
+
+    & #wrapper-socials
+        display: flex
+        flex-direction: row
+        gap: 1rem
+        align-items: center
+
+        & img 
+            width: 1rem
+    
+    & #wrapper-developer
+        position: absolute
+        right: .5rem
+        bottom: .5rem
+        font-size: .5rem

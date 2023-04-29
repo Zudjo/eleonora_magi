@@ -15,9 +15,16 @@
     box-sizing: border-box
     max-width: 100%
     max-height: 100%
+    font-size: inherit
+
+    &:focus
+        outline: none
 
 :root
     font-size: clamp(10px, 1.25vh + 1.25vw, 50px)
+
+    @media (min-width: breakpoints.$tablet)
+        font-size: clamp(10px, 1vh + 1vw, 50px)
 
 body
     background-color: colors.$black
@@ -79,10 +86,8 @@ u
         height: $height-mobile
 
     @media (min-width: breakpoints.$tablet)
-        &:nth-child(odd)
+        &:nth-of-type(odd):not(:last-of-type)
             flex-direction: row-reverse
-            
-            
 
     & > .wrapper-copy
         width: 50%

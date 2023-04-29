@@ -1,0 +1,49 @@
+@use '../variables/colors'
+@use '../variables/breakpoints'
+    
+.wrapper-grid
+    display: grid
+    grid-template-columns: auto auto
+    gap: 2rem
+
+    & h2
+        margin: 0
+
+form
+    width: 50%
+    height: 100%
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    gap: 1.5rem
+
+    @media (max-width: breakpoints.$tablet)
+        width: 100%
+
+    & input
+        background-color: colors.$black
+        width: 100%
+        height: 2rem
+        border: none 
+        border-bottom: solid .1rem colors.$white
+        
+        &[type=submit]
+            border: solid .1rem colors.$purple
+            border-radius: 1rem
+            transition: background-color 1s
+            cursor: pointer
+
+            &:hover
+                background-color: colors.$purple
+    
+    & textarea
+        height: 10rem
+        width: 100%
+        padding: 1rem
+        resize: none
+        caret-color: colors.$white
+        background-color: colors.$black
+        border: solid .1rem colors.$white
+        border-radius: 1rem
+        
