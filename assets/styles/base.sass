@@ -71,9 +71,10 @@ u
 
 /* classes */
 .sheet
-    $height-mobile: 87vh
+    $height-desktop: 95vh
+    $height-mobile: 80vh
 
-    height: 100vh
+    height: $height-desktop
     display: flex
     flex-direction: row
     align-items: center
@@ -88,6 +89,12 @@ u
     @media (min-width: breakpoints.$tablet)
         &:nth-of-type(odd):not(:last-of-type)
             flex-direction: row-reverse
+    
+    &:nth-of-type(even)
+        background-color: colors.$black-lighter
+
+        & *
+            background-color: inherit
 
     & > .wrapper-copy
         width: 50%
@@ -103,7 +110,7 @@ u
             width: 100%
 
     &.welcome
-        height: calc(100vh - dimensions.$header_height)
+        height: calc($height-desktop - dimensions.$header_height)
 
         @media (max-width: breakpoints.$tablet)
             height: calc($height-mobile - dimensions.$header_height)
@@ -111,3 +118,4 @@ u
 
         & h1
             font-size: 3rem
+
